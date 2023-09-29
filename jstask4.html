@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Show Date and Time</title>
+</head>
+
+<body>
+    <h1>Show Date and Time (IST)</h1>
+    <div>
+        <button onclick="showDate()">Show Date</button>
+        <p id="dateResult"></p>
+    </div>
+    <br>
+    <div>
+        <button onclick="showTime()">Show Time</button>
+        <p id="timeResult"></p>
+    </div>
+
+    <script>
+        function showDate() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Kolkata' };
+            const istDate = now.toLocaleDateString('en-IN', {
+                timeZone: 'Asia/Kolkata',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+
+
+            const formattedDate = istDate.replace(/ /g, '/');
+
+            const dateResultElement = document.getElementById("dateResult");
+            dateResultElement.textContent = formattedDate;
+        }
+        function showTime() {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Kolkata' };
+
+            const istTime = now.toLocaleString('en-US', {
+                timeZone: 'Asia/Kolkata',
+                weekday: 'short',
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour12: false,
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZoneName: 'short'
+            });
+
+            const formattedTime = istTime.replace(/,/g, '').replace(/GMT(\+|-)(\d{2})(\d{2})/, 'GMT$1$2:$3') + " (Indian Standard Time)";
+
+            const timeResultElement = document.getElementById("timeResult");
+            timeResultElement.textContent = formattedTime;
+        }
+
+    </script>
+</body>
+
+</html>

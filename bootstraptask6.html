@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap task 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .outermost {
+        height: 600px;
+        width: 600px;
+        background-color: whitesmoke;
+        margin-top: 90px;
+        margin-left: 400px;
+    }
+    
+    .custom-input {
+        width: 500px;
+        align-items: center;
+        align-content: center;
+        margin-left: 50px; 
+    }
+</style>
+<body>
+    
+    <div class="outermost">
+        <form action="/action_page.php" class="was-validated">
+            <label for="uname" class="form-label " style="margin-left: 50px;">Name</label>
+            <input type="text" class="form-control custom-input" id="uname" placeholder="Enter username" name="uname" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback text-align-left" style="margin-left: 50px;">Name is required.</div>
+            <br>
+            <label for="email" class="form-label " style="margin-left: 50px;">Email</label>
+            <input type="email" class="form-control custom-input" id="email"  name="email" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback text-align-left" style="margin-left: 50px;">Email is required.</div>
+            <br>
+            <label for="password" class="form-label " style="margin-left: 50px;">Password</label>
+            <input type="text" class="form-control custom-input" id="password"  name="password" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback text-align-left  " style="margin-left: 50px;">Password is required.</div>
+            <br>
+            <label for="hobbies" style="margin-left: 50px;"> Hobbies</label>
+            <select name="hobbies" id="hobbies" class="custom-input" style="height : 35px;">
+                <option value=""></option>
+                <option value="">cricket</option>
+                <option value="">badmantion</option>
+                <option value="">reading</option>
+
+            </select>
+                
+              <br><br><br>
+              <button class="btn btn-danger btn-block custom-input">Submit</button>
+              
+           
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

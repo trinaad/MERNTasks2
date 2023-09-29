@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculate Multiplication and Division</title>
+    <style>
+        .form-box {
+            border: 1px solid black;
+            padding: 20px;
+            width: 300px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+
+        }
+
+        label {
+            width: 200px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        .button-container {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculate Multiplication and Division</h1>
+    <div class="form-box">
+        <form>
+            <div>
+                <label for="num1">1st number is:</label>
+                <input type="number" id="num1" placeholder="Enter the first number">
+            </div>
+
+            <div>
+                <label for="num2">2nd number is:</label>
+                <input type="number" id="num2" placeholder="Enter the second number">
+            </div>
+
+            <div class="button-container">
+                <button type="button" onclick="multiply()">Multiply</button>
+                <button type="button" onclick="divide()">Divide</button>
+            </div>
+
+            <p id="result"></p>
+        </form>
+    </div>
+
+    <script>
+        function multiply() {
+            const num1Element = document.getElementById("num1");
+            const num2Element = document.getElementById("num2");
+
+            const num1 = parseFloat(num1Element.value);
+            const num2 = parseFloat(num2Element.value);
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                const multiplication = num1 * num2;
+
+                const resultElement = document.getElementById("result");
+                resultElement.textContent = `Multiplication result: ${multiplication}`;
+            } else {
+                alert("Please enter valid numbers.");
+            }
+        }
+
+        function divide() {
+            const num1Element = document.getElementById("num1");
+            const num2Element = document.getElementById("num2");
+
+            const num1 = parseFloat(num1Element.value);
+            const num2 = parseFloat(num2Element.value);
+
+            if (!isNaN(num1) && !isNaN(num2)) {
+                if (num2 === 0) {
+                    alert("Division by zero is not allowed.");
+                } else {
+                    const division = num1 / num2;
+
+                    const resultElement = document.getElementById("result");
+                    resultElement.textContent = `Division result: ${division}`;
+                }
+            } else {
+                alert("Please enter valid numbers.");
+            }
+        }
+    </script>
+</body>
+
+</html>

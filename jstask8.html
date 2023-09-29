@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 700px;
+            height: 700px;
+            background-image: linear-gradient(rgb(240, 240, 185), pink, rgb(230, 109, 129));
+        }
+
+        .input {
+            width: 300px;
+        }
+
+        .input1 {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <h1 style="color: rgb(109, 109, 244);">Registration Form</h1>
+            <form action="index.html">
+                <table border-style="das">
+                    <tr>
+                        <th><label for="fri">First Name</label></th>
+                        <td><input type="text" name="fri" class="input"></td>
+                        <td>
+                            <p class="name" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="las">Last Name</label></th>
+                        <td><input type="text" name="las" class="input" id="h1"></td>
+                        <td>
+                            <p class="name" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">Email</label></th>
+                        <td><input type="email" name="email" class="input"></td>
+                        <td>
+                            <p class="email" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="Pass">Password</label></th>
+                        <td><input type="password" name="pass" class="input"></td>
+                        <td>
+                            <p class="password" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="re">Re Enter Password</label></th>
+                        <td><input type="password" name="re" class="input"></td>
+                        <td>
+                            <p class="Re-password" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2"><label for="gen">Gender</label></th>
+                        <td><input type="radio" name="gen">Male</td>
+
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="gen">Female</td>
+                    </tr>
+                    <tr>
+                        <th><label for="Age">Age</label></th>
+                        <td><input type="number" name="Age" id="" class="input"></td>
+                        <td>
+                            <p class="age" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="num">Phone Number</label></th>
+                        <td><input type="number" name="num" class="input"></td>
+                        <td>
+                            <p class="number" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="input1><label for=" add">Address</label></th>
+                        <td><input type="text" name="add" class="input1"></td>
+                        <td>
+                            <p class="address" style="color: red;"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="sta">State</label></th>
+                        <td><input type="text" name="sta" class="input" style="margin-left: 10px;"></td>
+                        <td>
+                            <p class="state" style="color: red;"></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="cou">Country</label></th>
+                        <td>
+                            <select name="cou" id="">
+                                <option value="">Choose Your country</option>
+                                <option value="India">India</option>
+                                <option value="China">China</option>
+                                <option value="America">America</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="lan">Languages Known</label></th>
+                        <td><input type="checkbox" name="lan">English<input type="checkbox" name="lan">Kannada
+                            <input type="checkbox" name="lan">Hindi
+                            <input type="checkbox" name="lan">Telugu
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="checkbox" checked>Hereby i declare all the given details are true
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p style="margin-left: 270px;">Login to <a href="www.ethnus.com">Ethnus</a>
+                                Website </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <input type="submit" value="Register"
+                    style="margin-top: 20px;border-radius: 15px;width: 80px;background-color: red;text-decoration: underline;">
+                </ </form>
+
+
+
+
+
+        </div>
+    </center>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get references to the input fields and error message paragraphs
+            const firstNameInput = document.querySelector('input[name="fri"]');
+            const lastNameInput = document.querySelector('input[name="las"]');
+            const emailInput = document.querySelector('input[name="email"]');
+            const passwordInput = document.querySelector('input[name="pass"]');
+            const rePasswordInput = document.querySelector('input[name="re"]');
+            const ageInput = document.querySelector('input[name="Age"]');
+            const phoneNumberInput = document.querySelector('input[name="num"]');
+            const addressInput = document.querySelector('input[name="add"]');
+            const countrySelect = document.querySelector('select[name="cou"]');
+
+            const nameError = document.querySelector('.name');
+            const emailError = document.querySelector('.email');
+            const passwordError = document.querySelector('.password');
+            const rePasswordError = document.querySelector('.Re-password');
+            const ageError = document.querySelector('.age');
+            const phoneNumberError = document.querySelector('.number');
+            const addressError = document.querySelector('.address');
+            const countryError = document.querySelector('.state');
+
+            // Function to check the length of the input value
+            function checkLength(input, error, minLength) {
+                if (input.value.trim().length < minLength) {
+                    error.textContent = "Poor strength (at least " + minLength + " characters required)";
+                } else {
+                    error.textContent = "";
+                }
+            }
+
+            // Function to validate email format
+            function validateEmail(email) {
+                const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+                return emailRegex.test(email);
+            }
+
+            // Function to validate phone number format
+            function validatePhoneNumber(phoneNumber) {
+                const phoneNumberRegex = /^[0-9]{10}$/;
+                return phoneNumberRegex.test(phoneNumber);
+            }
+
+            // Attach input event listeners to the input fields
+            firstNameInput.addEventListener("input", function () {
+                checkLength(firstNameInput, nameError, 10);
+            });
+
+            lastNameInput.addEventListener("input", function () {
+                checkLength(lastNameInput, nameError, 10);
+            });
+
+            emailInput.addEventListener("input", function () {
+                if (!validateEmail(emailInput.value)) {
+                    emailError.textContent = "Invalid email format";
+                } else {
+                    emailError.textContent = "";
+                }
+            });
+
+            passwordInput.addEventListener("input", function () {
+                checkLength(passwordInput, passwordError, 10);
+                checkPasswordMatch();
+            });
+
+            rePasswordInput.addEventListener("input", function () {
+                checkPasswordMatch();
+            });
+
+            ageInput.addEventListener("input", function () {
+                if (isNaN(ageInput.value) || ageInput.value < 0) {
+                    ageError.textContent = "Invalid age";
+                } else {
+                    ageError.textContent = "";
+                }
+            });
+
+            phoneNumberInput.addEventListener("input", function () {
+                if (!validatePhoneNumber(phoneNumberInput.value)) {
+                    phoneNumberError.textContent = "Invalid phone number";
+                } else {
+                    phoneNumberError.textContent = "";
+                }
+            });
+
+            addressInput.addEventListener("input", function () {
+                if (addressInput.value.trim().length < 10) {
+                    addressError.textContent = "Poor strength (at least 10 characters required)";
+                } else {
+                    addressError.textContent = "";
+                }
+            });
+
+            countrySelect.addEventListener("change", function () {
+                if (countrySelect.value === "") {
+                    countryError.textContent = "Please select a country";
+                } else {
+                    countryError.textContent = "";
+                }
+            });
+
+            // Function to check if password and re-entered password match
+            function checkPasswordMatch() {
+                if (passwordInput.value !== rePasswordInput.value) {
+                    passwordError.textContent = "Passwords do not match";
+                    rePasswordError.textContent = "Passwords do not match";
+                } else {
+                    passwordError.textContent = "";
+                    rePasswordError.textContent = "";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

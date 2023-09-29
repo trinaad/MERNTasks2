@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boot Strap task 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    header {
+        width: 100%;
+        height: 43px;
+    }
+
+    .navbar {
+        height: 40px;
+    }
+
+    .nav-link {
+        margin-right: 70px;
+    }
+
+    #SIGNUP {
+        margin-left: 670px;
+    }
+
+    #outermost {
+        display: flex;
+    }
+
+    #div1 {
+        width: 80%;
+        height: 800px;
+
+    }
+
+    #div2 {
+        width: 22%;
+        height: 800px;
+
+    }
+</style>
+
+<body>
+    <header class="bg-info text-center pt-2">
+        <h4>Ethuns Layout</h4>
+    </header>
+    <nav class="navbar navbar-expand-sm bg-secondary ">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link active text-white" href="#">Home</a>
+                    <a class="nav-link active text-white " href="#">Menu</a>
+                    <a class="nav-link active text-white" href="#">About</a>
+                    <a class="nav-link active text-white" href="#">Contact</a>
+                    <a class="nav-link active text-white " href="#" id="SIGNUP">SIGNUP</a>
+                    <a class="nav-link active text-white" href="#">LOGIN</a>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="outermost">
+        <div class="bg-light text-center" id="div1">
+            Write your content here
+        </div>
+        <div class="bg-dark text-center text-white" id="div2">
+            This is
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

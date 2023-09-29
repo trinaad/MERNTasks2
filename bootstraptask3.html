@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boot Strap task 3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+  #Company {
+    margin-right: 900px;
+  }
+
+  #con1 {
+    width: 40%
+  }
+
+  .navbar {
+    height: 40px;
+  }
+
+  #con2 {
+    width: 65%;
+  }
+
+  #btn1 {
+    width: 240px;
+  }
+
+  #btn2 {
+    width: 240px;
+  }
+
+  #btn3 {
+    width: 240px;
+  }
+
+  #grid1 {
+    width: 100%;
+    align-items: left;
+  }
+
+  .col-sm-3 {
+    text-align: left;
+  }
+
+  .list-group-item {
+    text-align: left;
+  }
+
+  .custom-badge {
+    background-color: #6f42c1;
+    color: white;/
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" id="Company">Company name</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Enterprise</a>
+          </li>
+          <li class="nav-item">
+            <a class=" nav-link active" aria-current="page">Pricing</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <button class="btn btn-outline-primary" type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container p-3  my-5 text-center " id="con1">
+    <h1>Pricing</h1>
+    Quick Build and effective table for your potential customers with this Bootstrap example.its built with default
+    bootstrap components and utilites With little customization
+  </div>
+  <div class="container text-center " id="con2">
+    <div class="row">
+      <div class="col-sm p-1  ">
+        <div class="card text- mb-3" style="max-width: 18rem;">
+          <div class="card-header">Free</div>
+          <div class="card-body">
+            <h1 class="card-title">$0/<small class="text-muted">mo</small></h1>
+            <p class="card-text text-center">10 users included <br>2GB of storage <br>Email support <br> Help center
+              access.</p>
+            <a href="#" class="btn btn-outline-primary" id="btn1">Sign up for free</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm p-1 ">
+        <div class="card text- mb-3" style="max-width: 18rem;">
+          <div class="card-header">Pro</div>
+          <div class="card-body">
+            <h1 class="card-title">$15/<small class="text-muted">mo</small></h1>
+            <p class="card-text text-center">20 users included <br>2GB of storage <br>Priority Email support <br> Help
+              center access.</p>
+            <a href="#" class="btn btn-primary" id="btn2">Get Started</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm p-1  ">
+        <div class="card text- mb-3" style="max-width: 18rem;">
+          <div class="card-header">Enterprise</div>
+          <div class="card-body">
+            <h1 class="card-title">$29/<small class="text-muted">mo</small></h1>
+            <p class="card-text text-center">30 users included <br>2GB of storage <br>Phone and Email support <br> Help
+              center access.</p>
+            <a href="#" class="btn btn-primary" id="btn3">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row pt-5 mt-5 " id="grid1">
+      <div class="col-sm-3 ">
+        <h3><span class="badge custom-badge">B</span></h3>
+        <p class="text-align : left text-muted">@ 2017</p>
+      </div>
+      <div class="col-sm-3 ">
+        <h4>Features</h4>
+        <ul class="text-align-left"></ul>
+        <li class="list-group-item">Cool stuff</li>
+        <li class="list-group-item">Random feature</li>
+        <li class="list-group-item">Team feature</li>
+        <li class="list-group-item">Good feature</li>
+        </ul>
+      </div>
+      <div class="col-sm-3 ">
+        <h4>Resources</h4>
+        <ul class="text-align-left"></ul>
+        <li class="list-group-item">Resource</li>
+        <li class="list-group-item">Resource name</li>
+        <li class="list-group-item">Another resource</li>
+        <li class="list-group-item">Good resource</li>
+        </ul>
+
+      </div>
+      <div class="col-sm-3 ">
+        <h4>About</h4>
+        <ul class="text-align-left"></ul>
+        <li class="list-group-item">Team</li>
+        <li class="list-group-item">Locations</li>
+        <li class="list-group-item">Privacy</li>
+        <li class="list-group-item">Access</li>
+        </ul>
+
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

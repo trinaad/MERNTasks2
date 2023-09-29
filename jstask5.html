@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <style>
+        .invalid {
+            border: 1px solid red;
+        }
+
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><span class="error"> This field is required</span><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><span class="error"> This field is required</span><br><br>
+
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website"><span class="error"> This field is required</span><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><span class="error"> This field is
+            required</span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            clearErrors();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const website = document.getElementById('website').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            let isValid = true;
+            if (name === '') {
+                document.getElementById('name').classList.add('invalid');
+
+                document.getElementById('name').nextElementSibling.style.display = 'inline';
+                isValid = false;
+            }
+            if (email === '') {
+                document.getElementById('email').classList.add('invalid');
+                document.getElementById('email').nextElementSibling.textContent = ' A valid email address is required ';
+                document.getElementById('email').nextElementSibling.style.display = 'inline';
+                isValid = false;
+            }
+            if (website === '') {
+                document.getElementById('website').classList.add('invalid');
+                document.getElementById('website').nextElementSibling.textContent = ' A valid URL is required';
+                document.getElementById('website').nextElementSibling.style.display = 'inline';
+                isValid = false;
+            }
+            if (message === '') {
+                document.getElementById('message').classList.add('invalid');
+                document.getElementById('message').nextElementSibling.style.display = 'inline';
+                isValid = false;
+            }
+            if (isValid) {
+                alert('Form submitted successfully!');
+            }
+        });
+        function clearErrors() {
+            const fields = ['name', 'email', 'website', 'message'];
+            fields.forEach(function (field) {
+                document.getElementById(field).classList.remove('invalid');
+                document.getElementById(field).nextElementSibling.style.display = 'none';
+            });
+        }
+        function isValidURL(url) {
+            const pattern = /^(https?:\/\/)?([a-z\d.-]+\.[a-z]{2,})(:\d{1,5})?([/?#].*)?$/i;
+            return pattern.test(url);
+        }
+    </script>
+</body>
+
+</html>

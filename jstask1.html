@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reverse Number</title>
+</head>
+
+<body>
+    <h1>Reverse a Number</h1>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+    <button onclick="reverseAndDisplay()">Reverse</button>
+    <p id="result"></p>
+
+    <script>
+        function reverseAndDisplay() {
+            const inputElement = document.getElementById("inputNumber");
+            const userInput = parseInt(inputElement.value, 10);
+            if (!isNaN(userInput)) {
+                const reversedNumber = reverseNumber(userInput);
+                const resultElement = document.getElementById("result");
+                resultElement.textContent = `Reversed Number: ${reversedNumber}`;
+            } else {
+                alert("Please enter a valid number.");
+            }
+        }
+        function reverseNumber(num) {
+            const numStr = num.toString();
+            const reversedStr = numStr.split('').reverse().join('');
+            const reversedNum = parseInt(reversedStr, 10);
+            return reversedNum;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 7</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #train {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20%;
+            animation: moveTrain 5s linear paused;
+
+        }
+
+        h1 {
+            margin-top: 200px;
+            color: rgb(23, 23, 123);
+            text-align: center;
+        }
+
+        @keyframes moveTrain {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        #buttonContainer {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #startBtn,
+        #stopBtn {
+            display: inline-block;
+            margin: 0 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="train"
+        src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTlzOn9kuo26Hx1kwn1h-1ImPDBIiXDMc36CkqRqk92Vom4ywqe"
+        alt="Train">
+    <h1>Click the following buttons to handle animations</h1>
+    <div id="buttonContainer">
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+    </div>
+
+    <script>
+        const train = document.getElementById('train');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        let animationPaused = true;
+
+        startBtn.addEventListener('click', () => {
+            if (animationPaused) {
+                train.style.animationPlayState = 'running';
+                animationPaused = false;
+            }
+        });
+
+        stopBtn.addEventListener('click', () => {
+            train.style.animationPlayState = 'paused';
+            animationPaused = true;
+        });
+    </script>
+</body>
+
+</html>

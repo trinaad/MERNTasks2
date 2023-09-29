@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript6</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        .container {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="container my-5" style="width:25%;">
+            <div class="text-center my-4">
+                <p class="text-dark text-center  display-2"><i>Instagram</i></p>
+            </div>
+            <form onsubmit=" return f()">
+                <span id="msg"></span>
+
+                <div class="input-group my-4 text-center form-check">
+                    <span class="input-group-addon" style="width: 34px;"><span
+                            class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" id="uname" placeholder="Username" class="form-control">
+                </div>
+
+                <div class="input-group my-4 form-check">
+                    <span class="input-group-addon" style="width: 34px;"><span
+                            class="glyphicon glyphicon-lock"></span></span>
+                    <input type="text" id="pwd" placeholder="Password" class="form-control">
+                </div>
+                <div>
+                    <button class="btn btn-primary text-center text-light px-5 py-3 fs-4 " type="submit"
+                        style="width:100%">Log in</button>
+                </div>
+                <div class="row ">
+                    <div class="col d-flex justify-content-left">
+                        <div class="my-3">
+                            <input type="checkbox" id="check"><span class="fs-4">Remember me</span>
+                        </div>
+                    </div>
+                    <div class="col d-flex justify-content-end my-3">
+                        <p class="text-primary fs-4">Forgot Password?</p>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <p class="text-center fs-5">Don't have an account <span class="fs-5 text-primary">Sign up here</span>.</p>
+    </center>
+    <script>
+        function f() {
+            var input1 = document.getElementById("uname").value;
+            var input2 = document.getElementById("pwd").value;
+            if (input1.length < 5 || input2.length < 5) {
+                document.getElementById("msg").innerHTML = '<p class=" alert alert-danger"> Invalid</p>';
+                return false;
+            }
+            document.getElementById("msg").innerHTML = '<p class=" alert alert-success fs-4  "> Valid</p>';
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>
